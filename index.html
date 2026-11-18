@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>clipzz — Discover something</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="clipzz start"><span>clip</span><strong>zz</strong></a>
+    <nav class="topnav" aria-label="Hauptnavigation">
+      <button class="nav-link active">Für dich</button>
+      <button class="nav-link">Folge ich</button>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button search-button" aria-label="Suche">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+      </button>
+      <button class="upload-button" id="openUpload">Hochladen</button>
+      <button class="avatar-button" aria-label="Profil">MH</button>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <nav aria-label="Seitennavigation">
+      <a class="side-link active" href="#"><span>⌂</span><b>Für dich</b></a>
+      <a class="side-link" href="#"><span>⌕</span><b>Entdecken</b></a>
+      <a class="side-link" href="#"><span>＋</span><b>Live</b></a>
+      <a class="side-link" href="#"><span>♧</span><b>Gespeichert</b></a>
+    </nav>
+    <div class="suggestions">
+      <p>Empfohlene Creator</p>
+      <div id="creatorList"></div>
+    </div>
+  </aside>
+
+  <main class="feed" id="feed"></main>
+
+  <div class="search-panel" id="searchPanel" aria-hidden="true">
+    <div class="search-head">
+      <input id="searchInput" type="search" placeholder="Videos, Creator, Themen" aria-label="Suchen">
+      <button id="closeSearch">Schließen</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <dialog id="uploadDialog">
+    <form method="dialog" id="uploadForm">
+      <div class="dialog-head">
+        <div><span class="eyebrow">NEUER CLIP</span><h2>Inspiration teilen</h2></div>
+        <button value="cancel" class="close-dialog" aria-label="Schließen">×</button>
+      </div>
+      <label>Video auswählen
+        <input type="file" accept="video/*">
+      </label>
+      <label>Titel
+        <input id="uploadTitle" type="text" placeholder="Worum geht es?">
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="cancel-button">Abbrechen</button>
+        <button id="publishButton" value="default" class="publish-button">Veröffentlichen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
